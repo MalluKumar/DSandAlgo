@@ -7,7 +7,7 @@ public class BubbleSort {
         int[] array = {5, 25, -5, 9, 7, 3};
 
         for (int lastUnsortedIndex = array.length-1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
-            for (int i = 0; i < array.length-1; i++) {
+            for (int i = 0; i < lastUnsortedIndex; i++) {
                 if (array[i] > array[i+1]) {  // stable sort algorithm as order is preserved (using '>' operator)
                     swap(array, i, i+1);
                 }
