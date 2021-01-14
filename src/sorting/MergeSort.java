@@ -6,7 +6,7 @@ public class MergeSort {
 
         int[] array = {2, 1, 9, 10, 5, -2};
 
-        split (array, 0, array.length);
+        mergeSort (array, 0, array.length);
 
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
@@ -14,7 +14,7 @@ public class MergeSort {
 
     }
 
-    public static void split (int[] array, int start, int end) {
+    public static void mergeSort (int[] array, int start, int end) {
 
         // all the elements are split when this is executed
         if (end - start < 2) {
@@ -23,8 +23,8 @@ public class MergeSort {
 
         int mid = (start + end) / 2;
 
-        split (array, start, mid);
-        split (array, mid, end);
+        mergeSort (array, start, mid);
+        mergeSort (array, mid, end);
         merge (array, start, mid, end);
 
     }
@@ -40,7 +40,7 @@ public class MergeSort {
         int j = mid;
         int tempIndex = 0;
 
-        int[] tempArray = new int[array.length];      // array.length or end - start
+        int[] tempArray = new int[end - start];
 
         while (i < mid && j < end) {
             tempArray[tempIndex++] = array[i] <= array[j] ? array[i++] : array[j++];
