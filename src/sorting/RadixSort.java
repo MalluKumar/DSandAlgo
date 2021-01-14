@@ -30,12 +30,14 @@ public class RadixSort {
             tempArray[getDigit(position, value, radix)]++;
         }
 
+        // to maintain stable sorting
         for (int j = 1; j < radix; j++) {
             tempArray[j] += tempArray[j - 1];
         }
 
         int[] temp = new int[array.length];
 
+        // start adding elements from the right side
         for (int tempIndex = array.length - 1; tempIndex >= 0; tempIndex--) {
             temp[--tempArray[getDigit(position, array[tempIndex], radix)]] = array[tempIndex];
         }
