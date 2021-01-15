@@ -1,7 +1,5 @@
 package Lists.ArrayList;
 
-import Lists.ArrayList.Person;
-
 import java.util.ArrayList;
 import java.util.List;
 
