@@ -1,4 +1,4 @@
-package Lists.LinkedList.Singly;
+package lists.linkedList.singly;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package Lists.LinkedList.Doubly;
+package lists.linkedList.doubly;
 
 public class Main {
 
