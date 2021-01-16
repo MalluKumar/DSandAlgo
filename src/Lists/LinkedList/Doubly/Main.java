@@ -43,6 +43,20 @@ public class Main {
         System.out.println(employeeLinkedList.getSize());
         System.out.println("-----------------------------------------------------------------------------------------");
 
+        employeeLinkedList.addBefore(assistant, manager);   // case 1: when only one employee is present
+
+        employeeLinkedList.print();                         // after adding employee before existing employee
+        System.out.println();
+        System.out.println(employeeLinkedList.getSize());
+        System.out.println("-----------------------------------------------------------------------------------------");
+
+        employeeLinkedList.addBefore(new Employee("Virat", "Male", 32), manager); // case 2 : when multiple employees are present
+
+        employeeLinkedList.print();                         // after adding employee before existing employee
+        System.out.println();
+        System.out.println(employeeLinkedList.getSize());
+        System.out.println("-----------------------------------------------------------------------------------------");
+
     }
 
 }

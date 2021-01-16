@@ -39,6 +39,39 @@ public class EmployeeLinkedList {
 
     }
 
+    public boolean addBefore (Employee newEmployee, Employee existingEmployee) {
+
+        if (isEmpty()) {
+            return false;
+        }
+
+        EmployeeNode currentEmployeeNode = head;
+
+        EmployeeNode newNode = new EmployeeNode(newEmployee);
+
+        while (currentEmployeeNode.getNext() != null && ! currentEmployeeNode.getEmployee().equals(existingEmployee)) {
+            currentEmployeeNode = currentEmployeeNode.getNext();
+        }
+
+        if (currentEmployeeNode == null) {
+            return false;
+        } else {
+            if (head == currentEmployeeNode) {
+                head = newNode;
+            } else {
+                currentEmployeeNode.getPrevious().setNext(newNode);
+            }
+
+            newNode.setPrevious(currentEmployeeNode.getPrevious());
+            currentEmployeeNode.setPrevious(newNode);
+            newNode.setNext(currentEmployeeNode);
+            size++;
+            return true;
+
+        }
+
+     }
+
     public EmployeeNode removeNodeFromFront() {                      // removing employee at head
 
         EmployeeNode removeNode = head;
