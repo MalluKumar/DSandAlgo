@@ -1,4 +1,4 @@
-package hashTables.arrays;
+package hashTables.openAddressing;
 
 public class Main {
 
@@ -9,7 +9,7 @@ public class Main {
         Employee assistant2 = new Employee("KL", "Rahul", 27);
         Employee assistant3 = new Employee("James", "Anderson", 38);
 
-        HashTable ht = new HashTable();
+        LinearProbing ht = new LinearProbing();
 
         ht.put(manager.getLastName(), manager);
         ht.put(assistant1.getLastName(), assistant1);
@@ -19,6 +19,10 @@ public class Main {
         System.out.println("--------------------------------------------------------");
 
         System.out.println(ht.get(manager.getLastName()));
+        System.out.println("--------------------------------------------------------");
+
+        ht.remove(manager.getLastName());
+        ht.print();
 
     }
 
