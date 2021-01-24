@@ -23,10 +23,14 @@ public class BinarySearchTreeMain {
         System.out.println(tree.max());
         System.out.println("------------------------------------");
 
-        tree.delete(70);
+        // tree.delete(70);
         // tree.delete(50);
-        tree.delete(40);
+        // tree.delete(40);
+        tree.traversePreOrder();
+        System.out.println();
         tree.traverseInOrder();
+        System.out.println();
+        tree.traversePostOrder();
 
     }
 

@@ -22,6 +22,22 @@ public class Tree {
 
     }
 
+    public void traversePreOrder() {
+
+        if (root != null) {
+            root.traversalPreOrder();
+        }
+
+    }
+
+    public void traversePostOrder() {
+
+        if (root != null) {
+            root.traversalPostOrder();
+        }
+
+    }
+
     public TreeNode get(int value) {
 
         if (root != null) {
@@ -62,14 +78,14 @@ public class Tree {
             return null;
         }
 
-        // For case 1 and case 2
-        // Case 1: When the parent node has no child nodes
-        // Case 2: When the parent node has one child
         if (subtreeRoot.getValue() > value) {
             subtreeRoot.setLeftChild(delete(subtreeRoot.getLeftChild(), value));
         } else if(subtreeRoot.getValue() < value) {
             subtreeRoot.setRightChild(delete(subtreeRoot.getRightChild(), value));
         } else {
+            // For case 1 and case 2
+            // Case 1: When the parent node has no child nodes
+            // Case 2: When the parent node has one child
             if(subtreeRoot.getLeftChild() == null) {
                 return subtreeRoot.getRightChild();
             } else if (subtreeRoot.getRightChild() == null) {
