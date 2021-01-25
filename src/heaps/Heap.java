@@ -52,6 +52,19 @@ public class Heap {
         return heap[0];
     }
 
+    public void sort() {
+
+        int lastHeapIndex = size - 1;
+
+        for (int i = 0; i < lastHeapIndex; i++) {
+            int temp = heap[0];
+            heap[0] = heap[lastHeapIndex - i];
+            heap[lastHeapIndex - i] = temp;
+
+            fixHeapBelow(0, lastHeapIndex - i - 1);
+        }
+    }
+
     private void fixHeapBelow(int index, int lastHeapIndex) {
 
         int childToSwap;
@@ -106,7 +119,7 @@ public class Heap {
     }
 
     public void print() {
-        for (int i = 0; i < heap.length; i++) {
+        for (int i = 0; i < size; i++) {
             System.out.print(heap[i] + ", ");
         }
         System.out.println();
