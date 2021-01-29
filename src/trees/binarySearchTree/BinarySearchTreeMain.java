@@ -11,6 +11,8 @@ public class BinarySearchTreeMain {
         tree.insert(70);
         tree.insert(40);
 
+        System.out.println(tree.maxDepth());
+
         tree.traverseInOrder();
         System.out.println();
         System.out.println("------------------------------------");

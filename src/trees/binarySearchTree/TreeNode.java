@@ -113,6 +113,19 @@ public class TreeNode {
 
     }
 
+    public int depth(TreeNode root) {
+
+        if (root == null) {
+            return 0;
+        }
+
+        int left = depth(root.leftChild);
+        System.out.println(left);
+        int right = depth(root.rightChild);
+        System.out.println(right);
+        return 1 + Math.max(left, right);
+    }
+
     public int getValue() {
         return value;
     }

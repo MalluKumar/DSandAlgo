@@ -13,6 +13,16 @@ public class Tree {
         }
 
     }
+    
+    public int maxDepth() {
+
+        if (root == null) {
+            return 0;
+        } else {
+            return root.depth(root);
+        }
+
+    }
 
     public void traverseInOrder() {
 
